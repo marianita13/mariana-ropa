@@ -30,6 +30,5 @@ public interface IUnitOfWork
     ITipoPersona TipoPersonas { get; }
     ITipoProteccion TipoProteccions { get; }
     IVenta Ventas { get; }
-    
     Task<int> SaveAsync();
 }

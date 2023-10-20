@@ -1,3 +1,4 @@
+using API.Dtos;
 using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
@@ -30,7 +31,7 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
         public async Task<ActionResult<IEnumerable<Cargo>>> Get(int id){
-            var item = await _UnitOfWork.Cargos.GetByIdAsync(id);
+            var item = await _UnitOfWork.Cargos.GetIdAsync(id);
             return Ok(item); 
         }
 
@@ -41,7 +42,7 @@ namespace API.Controllers
 
         public async Task<ActionResult<Cargo>> Post(CargoDto itemDto){
             var item = _mapper.Map<Cargo>(itemDto);
-            this._UnitOfWork.Cargo.Add(item);
+            this._UnitOfWork.Cargos.Add(item);
             await _UnitOfWork.SaveAsync();
             if (item==null){
                 return BadRequest();
@@ -64,7 +65,7 @@ namespace API.Controllers
             if (item == null){
                 return NotFound();
             }
-            _UnitOfWork.Cargo.Update(item);
+            _UnitOfWork.Cargos.Update(item);
             await _UnitOfWork.SaveAsync();
             return item;
         }
@@ -72,11 +73,11 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult> Delete(int id){
-            var item = await _UnitOfWork.Cargo.GetByIdAsync(id);
+            var item = await _UnitOfWork.Cargos.GetIdAsync(id);
             if (item == null){
                 return NotFound();
             }
-            _UnitOfWork.Cargo.Delete(item);
+            _UnitOfWork.Cargos.Remove(item);
             await _UnitOfWork.SaveAsync();
             return NoContent();
         }
