@@ -9,6 +9,9 @@ namespace Core.Entities
 {
     public class Departamento : BaseEntity
     {
-        // Aquí va tu código adicional o personalizado.
+        public string Nombre { get; set; }
+        public Pais Pais { get; set; }
+        public int IdPaisFk { get; set; }
+        public ICollection<Municipio> Municipios { get; set; }
     }
 }

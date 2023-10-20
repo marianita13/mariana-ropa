@@ -9,6 +9,8 @@ namespace Core.Entities
 {
     public class Cargo : BaseEntity
     {
-        // Aquí va tu código adicional o personalizado.
+        public string Descripcion { get; set; }
+        public int SueldoBase { get; set; }
+        public ICollection<Empleado> Empleados { get; set; }
     }
 }

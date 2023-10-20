@@ -9,6 +9,9 @@ namespace Core.Entities
 {
     public class Talla : BaseEntity
     {
-        // Aquí va tu código adicional o personalizado.
+        /*UNICA*/
+        public string Descripcion { get; set; }
+        public ICollection<DetalleVenta> DetalleVentas { get; set; }
+        public ICollection<InventarioTalla> InventarioTallas { get; set; }
     }
 }

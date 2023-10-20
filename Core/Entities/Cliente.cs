@@ -9,10 +9,15 @@ namespace Core.Entities
 {
     public class Cliente : BaseEntity
     {
+        /*UNICA*/
         public int IdCliente { get; set; }
         public string Nombre { get; set; }
+        public DateOnly FechaRegistro { get; set; }
+
         public TipoPersona TipoPersona { get; set; }
         public int IdTipoPersonaFk { get; set; }
-        public DateOnly FechaRegistro { get; set; }
+
+        public ICollection<Venta> Ventas { get; set; }
+        public ICollection<Orden> Ordenes { get; set; }
     }
 }

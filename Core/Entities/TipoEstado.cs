@@ -9,6 +9,7 @@ namespace Core.Entities
 {
     public class TipoEstado : BaseEntity
     {
-        // Aquí va tu código adicional o personalizado.
+        public string Descripcion { get; set; }
+        public ICollection<Estado> Estados { get; set; }
     }
 }

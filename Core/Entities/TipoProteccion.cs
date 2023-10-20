@@ -9,6 +9,7 @@ namespace Core.Entities
 {
     public class TipoProteccion : BaseEntity
     {
-        // Aquí va tu código adicional o personalizado.
+        public string Descripcion { get; set; }
+        public ICollection<Prenda> Prendas { get; set; }
     }
 }

@@ -9,6 +9,8 @@ namespace Core.Entities
 {
     public class TipoPersona : BaseEntity
     {
-        // Aquí va tu código adicional o personalizado.
+        public string Nombre { get; set; }
+        public ICollection<Cliente> Clientes { get; set; }
+        public ICollection<Proveedor> Proveedores { get; set; }
     }
 }

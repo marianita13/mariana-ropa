@@ -9,6 +9,16 @@ namespace Core.Entities
 {
     public class DetalleVenta : BaseEntity
     {
-        // Aquí va tu código adicional o personalizado.
+        public int Cantidad { get; set; }
+        public int ValorUnit { get; set; }
+
+        public Venta Venta { get; set; }
+        public int IdVentaFk { get; set; }
+
+        public Inventario Inventario { get; set; }
+        public int IdProductoFk { get; set; }
+
+        public Talla Talla { get; set; }
+        public int IdTallaFk { get; set; }
     }
 }

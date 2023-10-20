@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class InsumoProveedor : BaseEntity
+    public class InsumoProveedor
     {
-        // Aquí va tu código adicional o personalizado.
+        /*PRIMARY KEY*/
+        public Insumo Insumo { get; set; }
+        public int IdInsumoFk { get; set; }
+
+        /*PRIMARY KEY*/
+        public Proveedor Proveedor { get; set; }
+        public int IdProveedorFk { get; set; }
     }
 }

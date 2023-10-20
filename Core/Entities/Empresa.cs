@@ -9,6 +9,13 @@ namespace Core.Entities
 {
     public class Empresa : BaseEntity
     {
-        // Aquí va tu código adicional o personalizado.
+        /*UNICA*/
+        public int Nit { get; set; }
+        public string RazonSocial { get; set; }
+        public string RepresentanteLegal { get; set; }
+        public DateOnly FechaCreacion { get; set; }
+
+        public Municipio Municipio { get; set; }
+        public int IdMunicipioFk { get; set; }
     }
 }

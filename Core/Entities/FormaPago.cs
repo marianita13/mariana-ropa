@@ -9,6 +9,7 @@ namespace Core.Entities
 {
     public class FormaPago : BaseEntity
     {
-        // Aquí va tu código adicional o personalizado.
+        public string Descripcion { get; set; }
+        public ICollection<Venta> Ventas { get; set; }
     }
 }

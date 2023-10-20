@@ -9,6 +9,18 @@ namespace Core.Entities
 {
     public class Empleado : BaseEntity
     {
-        // Aquí va tu código adicional o personalizado.
+        /*UNICA*/
+        public int IdEmp { get; set; }
+        public string Nombre { get; set; }
+        public DateOnly FechaIngreso { get; set; }
+
+        public Cargo Cargo { get; set; }
+        public int IdCargoFk { get; set; }
+
+        public Municipio Municipio { get; set; }
+        public int IdMunicipioFk { get; set; }
+
+        public ICollection<Orden> Ordenes { get; set; }
+        public ICollection<Venta> Ventas { get; set; }
     }
 }
