@@ -2,7 +2,7 @@ using Core.Entities;
 
 namespace Core.Interfaces
 {
-    public interface IInventarioTalla
+    public interface IInventarioTalla : IGenericRepository<InventarioTalla>
     {
         
     }

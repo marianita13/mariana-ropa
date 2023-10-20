@@ -11,8 +11,8 @@ namespace Core.Entities
     {
        public string Nombre { get; set; }
 
-       public Pais Pais { get; set; }
-       public int IdPaisFk { get; set; }
+       public Departamento Departamento { get; set; }
+       public int IdDepartamentoFk { get; set; }
 
        public ICollection<Empleado> Empleados { get; set; }
        public ICollection<Cliente> Clientes { get; set; }

@@ -18,8 +18,7 @@ namespace Infrastructure.Data.Configuration
             .IsUnique();
             builder.Property(x => x.Nombre)
             .IsRequired();
-            builder.Property(x => x.FechaIngreso)
-            .HasColumnType("DateOnly");
+            builder.Property(x => x.FechaIngreso);
             
             builder.HasOne(j => j.Cargo)
             .WithMany(j => j.Empleados)

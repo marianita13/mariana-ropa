@@ -6,7 +6,6 @@ namespace Infrastructure.Data.Configuration
 {
     public class EmpresaConfiguration: IEntityTypeConfiguration<Empresa>
     {
-
         public void Configure(EntityTypeBuilder<Empresa> builder)
         {
             builder.ToTable("Empresa");

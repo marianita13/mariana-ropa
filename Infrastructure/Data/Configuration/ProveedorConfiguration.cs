@@ -4,29 +4,28 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Data.Configuration
 {
-    public class ClienteConfiguration: IEntityTypeConfiguration<Cliente>
+    public class ProveedorConfiguration: IEntityTypeConfiguration<Proveedor>
     {
-
-        public void Configure(EntityTypeBuilder<Cliente> builder)
+        public void Configure(EntityTypeBuilder<Proveedor> builder)
         {
-            builder.ToTable("Cliente");
+            builder.ToTable("Proveedor");
 
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id);
             
-            builder.HasIndex(x => x.IdCliente)
+            builder.HasIndex(x => x.NitProveedor)
             .IsUnique();
             builder.Property(x => x.Nombre)
             .IsRequired();
-            builder.Property(x => x.FechaRegistro);
-            
+
             builder.HasOne(j => j.TipoPersona)
-            .WithMany(j => j.Clientes)
+            .WithMany(j => j.Proveedores)
             .HasForeignKey(j => j.IdTipoPersonaFk);
 
             builder.HasOne(j => j.Municipio)
-            .WithMany(j => j.Clientes)
+            .WithMany(j => j.Proveedores)
             .HasForeignKey(j => j.IdMunicipioFk);
+
         }
     }
 }

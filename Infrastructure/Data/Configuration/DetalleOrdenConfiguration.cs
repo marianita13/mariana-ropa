@@ -14,10 +14,8 @@ namespace Infrastructure.Data.Configuration
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id);
 
-            builder.Property(x => x.CantidadProducir)
-            .HasColumnType("int");
-            builder.Property(x => x.CantidadProducida)
-            .HasColumnType("int");
+            builder.Property(x => x.CantidadProducir);
+            builder.Property(x => x.CantidadProducida);
             
             builder.HasOne(j => j.Orden)
             .WithMany(j => j.DetalleOrdenes)

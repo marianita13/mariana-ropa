@@ -1,7 +1,9 @@
 
+using Core.Entities;
+
 namespace Core.Interfaces
 {
-    public interface IInsumoProveedor
+    public interface IInsumoProveedor : IGenericRepository<InsumoProveedor>
     {
         
     }
