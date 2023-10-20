@@ -1,4 +1,5 @@
 using System.Reflection;
+using ApiAnimals.Extensions;
 using AspNetCoreRateLimit;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -6,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-// builder.Services.ConfigureRatelimiting();
+builder.Services.ConfigureRatelimiting();
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
-// builder.Services.configureCors();
-// builder.Services.AddAplicationService();
+builder.Services.ConfigureCors();
+builder.Services.AddApplicationServices();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
